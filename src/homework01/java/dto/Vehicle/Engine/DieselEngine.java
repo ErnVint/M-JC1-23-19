@@ -1,14 +1,16 @@
-package dto.Vehicle;
+package dto.Vehicle.Engine;
 
 
-public class GasEngine extends AParts implements IEngine {
+import dto.Vehicle.AParts;
+
+public class DieselEngine extends AParts implements IEngine {
 
     public String id;
     private int volume;
     private String fuel;
 
 
-    public GasEngine (String id, int volume){
+    public DieselEngine (String id, int volume){
         this.id = id;
         this.volume = volume;
 
@@ -24,7 +26,7 @@ public class GasEngine extends AParts implements IEngine {
 
 
     public String getFuel() {
-        return "Gas";
+        return "Diesel";
     }
 
 

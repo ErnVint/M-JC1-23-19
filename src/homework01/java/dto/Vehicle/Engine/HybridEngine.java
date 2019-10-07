@@ -1,7 +1,9 @@
-   package dto.Vehicle;
+   package dto.Vehicle.Engine;
 
 
-    public class HybridEngine extends AParts implements IEngine {
+   import dto.Vehicle.AParts;
+
+   public class HybridEngine extends AParts implements IEngine {
 
         public String id;
         private int volume;

@@ -1,5 +1,7 @@
 package dto.Vehicle;
 
+import dto.Vehicle.Engine.IEngine;
+
 public class Vehicle implements IVehicle {
     private IEngine engine;
 

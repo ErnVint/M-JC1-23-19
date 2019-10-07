@@ -1,6 +1,8 @@
-package dto.Vehicle;
+package dto.Vehicle.Engine;
 
-public interface IEngine extends IParts{
+import dto.Vehicle.IParts;
+
+public interface IEngine extends IParts {
     int getVolume();
     String getFuel();
     String getId();
