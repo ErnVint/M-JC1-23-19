@@ -26,16 +26,55 @@ public class Homework2Main {
 
         int e;
         //byte[] f = 00001010; попытка обьявления переменной в двоичной системе для наглядности, не получилось
+        System.out.println(e = a|b); //побитовый OR any 1 is 1
+        //|| это или в выражениях bool
+        System.out.println(e = a&b); //побитовый AND both 1 is 1
+        //&& это и в выражениях bool
+        System.out.println(e = a^b); //XOR only 1 is 1
 
-        System.out.println(e = a&b);
-        System.out.println(e = a^b); //XOR из 4 и 8
+        if (a < b) {
+            System.out.println("a<b");
+        } else {
+            System.out.println("a>b");
+        }
 
+        //int ternar = 1 < 2 ? System.out.println("a<b") : System.out.println("a>b");
+        int ternary = a < b ? a : b;
+        System.out.println("ternary " + ternary);
 
+        //Plane airbus1 = (Airbus) new Plane(); //ClassCastException
+        Plane boening = new Boening(); //ClassCastException exit
+        Boening.check(boening);
 
+        int ex1 = 5 + 2 / 8;
+        int ex2 = (5 + 2) / 8;
+        int ex3_1 = 2;
+        int ex3 = (5 + ex3_1++) / 8;
+        ex3_1 = 2;
+        int ex4_1 = 8;
+        int ex4 = ((5 + ex3_1++) / --ex4_1);
+        ex3_1 = 2;
+        ex4_1 = 8;
+        int ex5 = (5 * 2 >> ex3_1++) / --ex4_1;
+        ex3_1 = 2;
+        ex4_1 = 8;
+        int ex6 = (5 + 7 > 20 ? 68 : 22 * 2 >> ex3_1++) / --ex4_1;
+        ex3_1 = 2;
+        ex4_1 = 8;
+        //int ex7 = (5 + 7 > 20 ? 68 => 68 : 22 * 2 >> ex3_1++) / --ex4_1;
+        //int ex8 = (6 - 2 > 3 && 12 * 12 <= 119);
+        boolean ex9 = true && false;
 
+        System.out.println(ex1);
+        System.out.println(ex2);
 
+        System.out.println(ex3);
 
-
+        System.out.println(ex4);
+        System.out.println(ex5);
+        System.out.println(ex6);
+        System.out.println(ex9);
 
     }
+
 }
