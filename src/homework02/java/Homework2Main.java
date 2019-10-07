@@ -12,7 +12,7 @@ public class Homework2Main {
         int a = 1;
         System.out.println(a = a << 2); //сдвиг влево, количество символов 2
 
-        int b = 35;
+        int b = 8;
         System.out.println(b = b >> 2); //сдвиг вправо на 2 остаток забывается
 
         int c = -15;
@@ -46,24 +46,24 @@ public class Homework2Main {
         Plane boening = new Boening(); //ClassCastException exit
         Boening.check(boening);
 
-        int ex1 = 5 + 2 / 8;
-        int ex2 = (5 + 2) / 8;
+        int ex1 = 5 + 2 / 8; //деление - результат 0 целой части, сложение - итог 5
+        int ex2 = (5 + 2) / 8;//сложение, деление - итог 0 целой части
         int ex3_1 = 2;
-        int ex3 = (5 + ex3_1++) / 8;
+        int ex3 = (5 + ex3_1++) / 8;//++ справа отрабатывает после знака равенства, итог 0
         ex3_1 = 2;
         int ex4_1 = 8;
-        int ex4 = ((5 + ex3_1++) / --ex4_1);
+        int ex4 = ((5 + ex3_1++) / --ex4_1);//++ справа после равно, -- слева перед равно, итог 1
         ex3_1 = 2;
         ex4_1 = 8;
-        int ex5 = (5 * 2 >> ex3_1++) / --ex4_1;
+        int ex5 = (5 * 2 >> ex3_1++) / --ex4_1;// сначала --, потом *, потом /, потом сдвиг итог 0
         ex3_1 = 2;
         ex4_1 = 8;
-        int ex6 = (5 + 7 > 20 ? 68 : 22 * 2 >> ex3_1++) / --ex4_1;
+        int ex6 = (5 + 7 > 20 ? 68 : 22 * 2 >> ex3_1++) / --ex4_1;//сначала --, потом +, сдвиг, тернарное,деление итог
         ex3_1 = 2;
         ex4_1 = 8;
         //int ex7 = (5 + 7 > 20 ? 68 => 68 : 22 * 2 >> ex3_1++) / --ex4_1;
         //int ex8 = (6 - 2 > 3 && 12 * 12 <= 119);
-        boolean ex9 = true && false;
+        boolean ex9 = true && false; //false
 
         System.out.println(ex1);
         System.out.println(ex2);
