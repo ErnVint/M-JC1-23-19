@@ -60,10 +60,14 @@ public class Homework2Main {
         ex4_1 = 8;
         int ex6 = (5 + 7 > 20 ? 68 : 22 * 2 >> ex3_1++) / --ex4_1;//сначала --, потом +, сдвиг, тернарное,деление итог
         ex3_1 = 2;
-        ex4_1 = 8;
         //int ex7 = (5 + 7 > 20 ? 68 => 68 : 22 * 2 >> ex3_1++) / --ex4_1;
-        //int ex8 = (6 - 2 > 3 && 12 * 12 <= 119);
-        boolean ex9 = true && false; //false
+        boolean ex_7_1 = 5 + 7 > 20; //false значит идем во вторую часть тернарного выражения
+        int ex_7_2 = 22 * 2 >> ex3_1++; //44/4=4
+        int ex7 = ex_7_2 / --ex4_1;
+
+        boolean ex8 = (6 - 2 > 3 && 12 * 12 <= 119);//получает в конце true&&false && возвращает false если оба не true
+
+        boolean ex9 = true && false; //false && возвращает false если оба не true
 
         System.out.println(ex1);
         System.out.println(ex2);
@@ -73,6 +77,8 @@ public class Homework2Main {
         System.out.println(ex4);
         System.out.println(ex5);
         System.out.println(ex6);
+        System.out.println(ex7);
+        System.out.println(ex8);
         System.out.println(ex9);
 
     }
