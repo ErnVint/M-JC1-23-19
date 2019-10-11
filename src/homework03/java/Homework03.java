@@ -1,3 +1,5 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Homework03 {
 
@@ -84,6 +86,27 @@ public class Homework03 {
         System.out.println("______________________________________");
     }
 
+    public static void taskToDoTill111019() {
+        String pattern_phonenumber = "((\\+|8|0){1}((\\d|(|)|s){8,11})$)";
+        //String pattern_phonenumber = "^(?:\\d{8}(?:\\d{2}(?:\\d{2})?)?|\\(\\+?\\d{2,3}\\)\\s?(?:\\d{4}[\\s*.-]?\\d{4}|\\d{3}[\\s*.-]?\\d{3}|\\d{2}([\\s*.-]?)\\d{2}\\1\\d{2}(?:\\1\\d{2})?))$\n";
+        Pattern pattern = Pattern.compile(pattern_phonenumber);
+        String[] phonenum = new String[]{
+                "+375 29 5553628", "I love you",
+                "+375(29)5553628", "8029",
+                "+375(29)444-99-02", "+7(129)444-99-0244444444444444"
+        };
+
+        for (String tel: phonenum
+        ) {
+
+            System.out.println(tel);
+            Matcher matcher = pattern.matcher(tel);
+            System.out.println(matcher.find());
+
+        }
+
+    }
+
 
     public static void main(String[] args) {
         homeWork11();
@@ -93,6 +116,7 @@ public class Homework03 {
         homeWork22(new String[]{"123123", "dfgdfgdg", "kukykuy", "dafas"});
         homeWork23(new String[]{"123123", "dfgdfgdg", "kukykuy", null, "123123", "dfgdfgdg", "kukykuy"});
         homeWork3(new Object[]{10, "a", 12L});
+        taskToDoTill111019();
 
     }
 
