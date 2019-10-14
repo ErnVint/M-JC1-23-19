@@ -13,7 +13,12 @@
 
 */
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Homework04 {
     public static void homeWork11(){
@@ -65,12 +70,34 @@ public class Homework04 {
         System.out.println("\n\t\rregex " + a1.matches("\\h*, \\h+, \\h?")); //сравнивает всю строку целиком с паттерном
     }
 
-    public static void main(String[] args) {
-       // homeWork11();
-       // homeWork12("asdf");
-       // homeWork13();
-       // homeWork14();
+    public static void  homeWork22(String word) throws FileNotFoundException {
+
+            File file = new File("/Users/ernvint/IdeaProjects/Car/src/homework04/java/Война и мир.txt");
+            FileReader fileReader = new FileReader(file);
+            Scanner scan = new Scanner((fileReader));
+            String line;
+            int counter = 0;
+            while(scan.hasNextLine()) {
+                line = scan.nextLine();
+                Pattern pattern = Pattern.compile(word);
+                Matcher matcher = pattern.matcher(line);
+               if(matcher.find()){counter++;}
+
+            }
+            System.out.println(counter);
+            scan.close();
+
+    }
+
+    public static void main(String[] args) throws FileNotFoundException {
+        homeWork11();
+        homeWork12("asdf");
+        homeWork13();
+        homeWork14();
         homeWork21();
+        homeWork22("война");
+        homeWork22("\\sи\\s");
+        homeWork22("мир");
 
     }
 
