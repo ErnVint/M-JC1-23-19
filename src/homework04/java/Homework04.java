@@ -58,7 +58,11 @@ public class Homework04 {
     }
 
     public static void homeWork21(){
-
+        String a1 = "IloveyouJAVA";
+        System.out.println(a1.toLowerCase().contains("i"));
+        System.out.println(a1.endsWith("JAVA"));
+        System.out.println(a1.contains("JAVA"));
+        System.out.println("\n\t\rregex " + a1.matches("\\h*, \\h+, \\h?")); //сравнивает всю строку целиком с паттерном
     }
 
     public static void main(String[] args) {
@@ -66,7 +70,7 @@ public class Homework04 {
        // homeWork12("asdf");
        // homeWork13();
        // homeWork14();
-
+        homeWork21();
 
     }
 
