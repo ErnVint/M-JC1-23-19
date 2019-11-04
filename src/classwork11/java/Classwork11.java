@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Classwork11 {
    volatile static int a = 1;
+   static Object x = new Object();
 
     public static void main(String[] args) throws InterruptedException {
             Job job = new Job();
@@ -17,7 +18,11 @@ public class Classwork11 {
         t3.start();
         t4.start();
         t5.start();
-t2.join();
+        t1.join();
+        t2.join();
+        t3.join();
+        t4.join();
+        t5.join();
 
         System.out.println(" "+ a);
 
@@ -36,8 +41,11 @@ t2.join();
                     e.printStackTrace();
                 }
                // System.out.println(Thread.currentThread().getName());
-                a += i;
-                System.out.println(a);
+                synchronized (x) {
+                    a += i;
+                    System.out.println(a);
+                }
+
             }
         }
     }

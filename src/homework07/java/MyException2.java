@@ -5,8 +5,8 @@ public class MyException2 extends MyException {
 
     @Override
     public String toString() {
-        return "MyException2{" +
-                "i2=" + i2 +
-                '}';
+        return "MyException2{ "
+                + i2 +
+                " }";
     }
 }
