@@ -15,5 +15,6 @@ public class Task24 {
              list) {
             System.out.println(numberList);
         }
+        //или через list.get()
     }
 }

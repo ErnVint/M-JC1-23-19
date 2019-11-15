@@ -25,11 +25,11 @@ public class Messenger {
         File history = new File ("/Users/ernvint/IdeaProjects/Car/src/messenger/java/History.rtf");
 
         Login.login(users);
-        User user1 = Login.user1;
+        User user1 = Login.user;
         Login.login(users);
-        User user2 = Login.user1;
+        User user2 = Login.user;
         Login.login(users);
-        User user3 = Login.user1;
+        User user3 = Login.user;
         InputMessage.input(history, user1, user2, user3);
     }
 }

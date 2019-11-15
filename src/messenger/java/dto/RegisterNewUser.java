@@ -16,12 +16,11 @@ public class RegisterNewUser {
 
 
     public void newUser() throws IOException {
-        String newUser = "";
+        String login = "";
         boolean checkExistingUser = true;
         Scanner scanner = new Scanner(System.in);
         Scanner fileScanner = new Scanner(new FileReader("/Users/ernvint/IdeaProjects/Car/src/messenger/java/Users.rtf"));
-        Pattern pattern1 = Pattern.compile(".+login='" + newUser + "'.+");
-        Pattern pattern2 = Pattern.compile("^[^\\d!#\\\\А-яЁё].*[^!#\\\\А-яЁё]{4,}");
+
         while (checkExistingUser) {
             System.out.print("     /**\n" +
                     "     * only english letters\n" +
@@ -30,11 +29,13 @@ public class RegisterNewUser {
                     "     * should not contain #,!,\\\n" +
                     "     **/ \n" +
                     "Enter USERNAME: ");
-            newUser = scanner.nextLine();
+            login = scanner.nextLine();
             while (fileScanner.hasNextLine()) {
                 String baseUser = fileScanner.nextLine();
+                Pattern pattern1 = Pattern.compile(".+login='" + login + "'.+");
+                Pattern pattern2 = Pattern.compile("^[^\\d!#\\\\А-яЁё].*[^!#\\\\А-яЁё]{4,}");
                 Matcher matcher = pattern1.matcher(baseUser);
-                Matcher matcher2 = pattern2.matcher(newUser);
+                Matcher matcher2 = pattern2.matcher(login);
                 if (matcher.matches()) {
                     System.out.println("Username already exist. Choose another username.");
                     break;
@@ -49,10 +50,10 @@ public class RegisterNewUser {
 
         System.out.print("Enter password: ");
         String pw = scanner.nextLine();
-        User newUser1 = new User(newUser, pw);
+        User newUser = new User(login, pw);
         FileSaver fileSaver = new FileSaver(this.file);
-        fileSaver.printToFile(newUser1.toString());
+        fileSaver.printToFile(newUser.toString());
         System.out.println("Registration successful.");
-        Login.login(this.file);
+      //  Login.login(this.file); //непонятно почему я это изначалально писал
     }
 }

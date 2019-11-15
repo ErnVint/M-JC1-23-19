@@ -37,7 +37,7 @@ public class Message {
     public String toString() {
         return "Message{" +
                 "message='" + message + '\'' +
-                ", user=" + user +
+                ", user=" + user.getLogin() +
                 ", date=" + date +
                 '}';
     }
